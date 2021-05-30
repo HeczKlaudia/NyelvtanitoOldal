@@ -3,35 +3,55 @@ var szovegbolObjektum = JSON.parse(szovegJSON);
 
 $(function () {
     kiirKerdesek();
-//    ellenorzes();
+
+    for (var i = 0; i < 3; i++) {
+        $("#szavak button").eq(i).on("click", ellenorzes);
+    }
+    
     leptetes();
+    $("#jobb").on("click", kiirKerdesek);
+    
 });
 
-function kiirKerdesek() {
-    document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[0].kerdes;
-    
-    document.querySelector("#valaszok1").innerHTML = szovegbolObjektum[0].valasz1;
-    document.querySelector("#valaszok2").innerHTML += szovegbolObjektum[0].valasz2;
-    document.querySelector("#valaszok3").innerHTML += szovegbolObjektum[0].valasz3;
-    ellenorzes();
+var kor = 0;
+
+function kiirKerdesek() {    
+    document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[kor].kerdes;
+    document.querySelector("#valaszok1").innerHTML = szovegbolObjektum[kor].valasz1;
+    document.querySelector("#valaszok2").innerHTML = szovegbolObjektum[kor].valasz2;
+    document.querySelector("#valaszok3").innerHTML = szovegbolObjektum[kor].valasz3;
+    kor++;
 }
 
 function ellenorzes() {
-    for (var i = 0; i < max; i++) {
-        
-    }
+    var ID = "#" + this.id;
+    console.log(this.id);
     
+    if ($(ID).text() === szovegbolObjektum[0].valasz1) {
+        document.getElementById("valaszok").innerHTML = "Helyes a válasz";
+        $("#valaszok2").attr("disabled", "disabled");
+        $("#valaszok3").attr("disabled", "disabled");
+        this.classList.add("joValaszSzinezes");
+    } else {
+        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
+        this.classList.add("rosszValaszSzinezes");
+        $(ID).attr("disabled", "disabled");
+    };
     
+function leptetes() {
     
-    
+}
+
+
+
 //    document.getElementById("valaszok1").onclick = function () {
 //        document.getElementById("valaszok").innerHTML = "Helyes a válasz";
 //        $("#valaszok2").attr("disabled", "disabled");
 //        $("#valaszok3").attr("disabled", "disabled");
 //    };
-    
-    
-    
+
+
+
 //    document.getElementById("valaszok2").onclick = function () {
 //        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
 //        $("#valaszok2").attr("disabled", "disabled");
@@ -40,32 +60,6 @@ function ellenorzes() {
 //        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
 //        $("#valaszok3").attr("disabled", "disabled");
 //    };
-}
 
-function leptetes() {
-    $("#jobb")[0].addEventListener("click", kepLeptetesJobb);
-    
-}
-
-function kepLeptetesJobb() {
-    var j = "#valaszok" + this.id;
-    for (var i = 0; i < szovegbolObjektum.length; i++) {
-        document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[i].kerdes;
-        i++;
-        console.log(j);
-        $(j).attr("disabled", "enabled");
-    }
-//    for (var i = 0; i < szovegbolObjektum.length; i++) {
-//        document.querySelector("#valaszok1").innerHTML = szovegbolObjektum[i].valasz1;
-//        document.querySelector("#valaszok2").innerHTML = szovegbolObjektum[i].valasz2;
-//        document.querySelector("#valaszok3").innerHTML = szovegbolObjektum[i].valasz3;
-//        i++;
-//    }
-    $("#valaszok").empty();
-    
-//    for (var i = 0; i < szovegbolObjektum.length; i++) {
-//    if(i>szovegbolObjektum.length-1) {
-//         document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[i].kerdes;
-//     }
 // }
 }
