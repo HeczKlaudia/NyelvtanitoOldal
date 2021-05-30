@@ -1,4 +1,4 @@
-var szovegJSON = '[{"kerdes":"My name ... Klaudia","valasz1":"is","valasz2":"are","valasz3":"bla"},{"kerdes":"Ich ... dich","valasz1":"liebe","valasz2":"komme","valasz3":"spreche"},{"kerdes":"Was ... das","valasz1":"are","valasz2":"ist","valasz3":"du"}]';
+var szovegJSON = '[{"kerdes":"My name ... Klaudia","valasz1":"is","valasz2":"are","valasz3":"bla"},{"kerdes":"Ich ... dich","valasz1":"liebe","valasz2":"komme","valasz3":"spreche"},{"kerdes":"Was ... das","valasz1":"are","valasz2":"ist","valasz3":"du"},{"kerdes":"Was ... das","valasz1":"are","valasz2":"ist","valasz3":"du"},{"kerdes":"Was ... das","valasz1":"are","valasz2":"ist","valasz3":"du"},{"kerdes":"Was ... das","valasz1":"are","valasz2":"ist","valasz3":"du"}]';
 var szovegbolObjektum = JSON.parse(szovegJSON);
 
 $(function () {
@@ -7,59 +7,61 @@ $(function () {
     for (var i = 0; i < 3; i++) {
         $("#szavak button").eq(i).on("click", ellenorzes);
     }
-    
-    leptetes();
+     
     $("#jobb").on("click", kiirKerdesek);
     
 });
 
-var kor = 0;
+var kor = -1;
+var tomb = [];
+tomb.push("#valaszok1", "#valaszok2", "#valaszok3");
+//console.log(tomb);
 
-function kiirKerdesek() {    
-    document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[kor].kerdes;
-    document.querySelector("#valaszok1").innerHTML = szovegbolObjektum[kor].valasz1;
-    document.querySelector("#valaszok2").innerHTML = szovegbolObjektum[kor].valasz2;
-    document.querySelector("#valaszok3").innerHTML = szovegbolObjektum[kor].valasz3;
-    kor++;
+function kiirKerdesek() {
+    if (kor < szovegbolObjektum.length-1) {
+        try {
+            for (var i = 0; i < tomb.length; i++) {
+                $(tomb[i]).removeClass("joValaszSzinezes");
+                $(tomb[i]).removeClass("rosszValaszSzinezes");
+                for (var j = 0; j < 3; j++) {
+                    $("#szavak button").eq(j).removeClass("joValaszTobbi");
+                }
+            }
+        } catch (e) {
+
+        }
+        ;
+
+        kor++;
+        document.querySelector("#kerdesek").innerHTML = szovegbolObjektum[kor].kerdes;
+
+        tomb.sort(function (a, b) {
+            return Math.random() - 0.5;
+        });
+
+        document.querySelector(tomb[0]).innerHTML = szovegbolObjektum[kor].valasz1;
+        document.querySelector(tomb[1]).innerHTML = szovegbolObjektum[kor].valasz2;
+        document.querySelector(tomb[2]).innerHTML = szovegbolObjektum[kor].valasz3;
+
+    } else {
+        document.querySelector("#kerdesek").innerHTML = "VÉGE A JÁTÉKNAK!";
+    }
 }
 
 function ellenorzes() {
-    var ID = "#" + this.id;
-    console.log(this.id);
-    
-    if ($(ID).text() === szovegbolObjektum[0].valasz1) {
-        document.getElementById("valaszok").innerHTML = "Helyes a válasz";
-        $("#valaszok2").attr("disabled", "disabled");
-        $("#valaszok3").attr("disabled", "disabled");
-        this.classList.add("joValaszSzinezes");
+    if (kor < szovegbolObjektum.length) {
+        console.log(this.id);
+        if ($(this).text() === szovegbolObjektum[kor].valasz1) {
+            $("#valaszok").text("Helyes a válasz");
+            $(this).addClass("joValaszSzinezes");
+            for (var i = 0; i < 3; i++) {
+                $("#szavak button").eq(i).addClass("joValaszTobbi");
+            }
+        } else {
+            $("#valaszok").text("Rossz a válasz");
+            $(this).addClass("rosszValaszSzinezes");
+        }
     } else {
-        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
-        this.classList.add("rosszValaszSzinezes");
-        $(ID).attr("disabled", "disabled");
-    };
-    
-function leptetes() {
-    
-}
-
-
-
-//    document.getElementById("valaszok1").onclick = function () {
-//        document.getElementById("valaszok").innerHTML = "Helyes a válasz";
-//        $("#valaszok2").attr("disabled", "disabled");
-//        $("#valaszok3").attr("disabled", "disabled");
-//    };
-
-
-
-//    document.getElementById("valaszok2").onclick = function () {
-//        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
-//        $("#valaszok2").attr("disabled", "disabled");
-//    };
-//    document.getElementById("valaszok3").onclick = function () {
-//        document.getElementById("valaszok").innerHTML = "Rossz a válasz";
-//        $("#valaszok3").attr("disabled", "disabled");
-//    };
-
-// }
+            document.querySelector("#kerdesek").innerHTML = "VÉGE A JÁTÉKNAK!";
+    }
 }
