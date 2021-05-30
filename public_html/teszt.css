@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+#valasz {
+    border:none;
+    font-size: 30px;
+    font-family: 'Amatic SC', cursive;
+    padding:10px;
+    border-left: 3px solid lightblue;
+    border-right: 3px solid lightblue;
+}
+
+#kerdes {
+    font-family: 'Indie Flower', cursive;
+    font-size:20px;
+}
+
+article,form,#valasz {
+    margin: auto;
+    text-align:center;
+}
+
+#kuld {
+    width:210px;
+    background-color:lightblue;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+

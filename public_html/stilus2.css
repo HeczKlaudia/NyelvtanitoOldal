@@ -8,7 +8,8 @@ main {
     display: grid;
     grid-template-areas:
         "h h h h"
-        "a a s s"
+        "a a a a"
+        "s s s s"
         "f f f f";
     grid-gap: 10px;
     max-width: 1000px;
