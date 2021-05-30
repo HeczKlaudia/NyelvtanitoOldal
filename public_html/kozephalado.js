@@ -7,15 +7,15 @@ $(function () {
     for (var i = 0; i < 3; i++) {
         $("#szavak button").eq(i).on("click", ellenorzes);
     }
-
+     
     $("#jobb").on("click", kiirKerdesek);
-
+    
 });
 
 var kor = -1;
 var tomb = [];
 tomb.push("#valaszok1", "#valaszok2", "#valaszok3");
-console.log(tomb);
+//console.log(tomb);
 
 function kiirKerdesek() {
     if (kor < szovegbolObjektum.length-1) {
@@ -64,5 +64,4 @@ function ellenorzes() {
     } else {
             document.querySelector("#kerdesek").innerHTML = "VÉGE A JÁTÉKNAK!";
     }
-
 }

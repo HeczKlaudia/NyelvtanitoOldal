@@ -40,6 +40,14 @@ footer {
     padding: 10px;
 }
 
+.joValaszSzinezes {
+    color: lightgreen;
+}
+
+.rosszValaszSzinezes {
+    color: red;
+}
+
 #angol img {
     width:400px;
     border: 1px solid gray;
