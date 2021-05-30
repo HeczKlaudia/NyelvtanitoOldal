@@ -36,3 +36,20 @@ footer {
     grid-area: f;
     padding: 10px;
 }*/
+
+.joValaszSzinezes {
+    color:lightgreen;
+}
+
+.rosszValaszSzinezes {
+    color:red;
+    pointer-events: none;
+    opacity:50%;
+    
+}
+
+.joValaszTobbi {
+    pointer-events: none;
+    opacity:50%;
+    
+}
