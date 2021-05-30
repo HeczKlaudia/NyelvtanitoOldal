@@ -1,4 +1,4 @@
-/*@charset "utf-8";
+@charset "utf-8";
 
 body {
     background-color: lightblue;
@@ -8,7 +8,7 @@ main {
     display: grid;
     grid-template-areas:
         "h h h h"
-        "a a s s"
+        "a a a a"
         "f f f f";
     grid-gap: 10px;
     max-width: 1000px;
@@ -25,31 +25,50 @@ header {
 article {
     grid-area: a;
     padding: 10px;
+    
 }
 
-aside {
-    grid-area: s;
-    padding: 10px;
+#nyelvvalaszto {
+      display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+
 
 footer {
     grid-area: f;
     padding: 10px;
-}*/
-
-.joValaszSzinezes {
-    color:lightgreen;
 }
 
-.rosszValaszSzinezes {
-    color:red;
-    pointer-events: none;
-    opacity:50%;
-    
+#angol img {
+    width:400px;
+    border: 1px solid gray;
+     border-radius: 20px;
 }
 
-.joValaszTobbi {
-    pointer-events: none;
-    opacity:50%;
-    
+#nemet img {
+    width:400px;
+   border: 1px solid gray;
+   border-radius: 20px;
+}
+
+#szintek img {
+      width:400px;
+   border: 5px solid gray;
+   border-radius: 20px;
+   margin-bottom:10px;
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nyelvvalaszto img {
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.arnyekoz{
+opacity:100%;
+  transition:opacity 2s;
 }

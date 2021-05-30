@@ -52,13 +52,13 @@ function ellenorzes() {
     if (kor < szovegbolObjektum.length) {
         console.log(this.id);
         if ($(this).text() === szovegbolObjektum[kor].valasz1) {
-            $("#valaszok").html("Helyes a válasz");
+            $("#valaszok").text("Helyes a válasz");
             $(this).addClass("joValaszSzinezes");
             for (var i = 0; i < 3; i++) {
                 $("#szavak button").eq(i).addClass("joValaszTobbi");
             }
         } else {
-            $("#valaszok").html("Rossz a válasz");
+            $("#valaszok").text("Rossz a válasz");
             $(this).addClass("rosszValaszSzinezes");
         }
     } else {

@@ -1,0 +1,61 @@
+@charset "utf-8";
+header,section,article,footer{
+    border: 1px solid grey;
+}
+main{
+    
+}
+main{
+    max-width: 900px;
+    margin: auto;
+}
+
+img {
+    width: 200px;
+    padding: 5px;
+    margin-left: 50px;
+    
+}
+
+header{
+    text-align: center;
+}
+button{
+    background-color: #999999;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 16px;
+    width: 20%;
+    margin: 3px;
+    margin-left: 40%;
+    margin-right: 40%;
+
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#proba{
+    padding: 5px;
+}
+section div{
+    margin: 50px;
+}
+section img{
+    border: 2px solid grey;
+}
+article h1{
+    text-align: center;
+}
+footer{ 
+    text-align: center;
+    padding: 5px;
+}
+#szavak{
+
+}
