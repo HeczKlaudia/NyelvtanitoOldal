@@ -20,6 +20,8 @@ main {
 header {
     grid-area: h;
     padding: 10px;
+    background-image: url("kepek/fejlec.png");
+    height:295px;
 }
 
 article {
@@ -38,6 +40,8 @@ article {
 footer {
     grid-area: f;
     padding: 10px;
+    text-align: center;
+    size:20px;
 }
 
 #angol img {
@@ -68,6 +72,10 @@ footer {
     margin-right: auto;
 }
 
+#egeszszotar{
+   
+
+}
 
 
 .arnyekoz{
@@ -75,3 +83,39 @@ opacity:100%;
   transition:opacity 2s;
 }
 
+#felvetel label {
+    padding:5px;
+    margin:5px;
+    font-weight: bold;
+    color:lightslategrey;
+}
+
+#felvetel input {
+    margin:5px;
+    width:200px;
+}
+
+#felvetel h3 {
+    color: cornflowerblue;
+}
+
+#szotaram th {
+    padding:10px;
+    border:1px solid gray;
+    color:#999999;
+    font-weight: bold;
+}
+
+#szotaram tbody {
+    text-align: center;
+}
+
+#felvesz {
+    width:200px;
+    font-weight: bold;
+}
+
+#nyomtat {
+    width:200px;
+    font-weight: bold;
+}
