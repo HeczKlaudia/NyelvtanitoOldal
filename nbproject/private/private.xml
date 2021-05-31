@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/D:/Suli/Újabbak/Webprog/NyelvTanuloKozos/NyelvtanitoOldal/public_html/index.html</file>
             <file>file:/D:/Suli/Újabbak/Webprog/NyelvTanuloKozos/NyelvtanitoOldal/public_html/angol.html</file>
@@ -17,5 +18,8 @@
             <file>file:/D:/Suli/Újabbak/Webprog/NyelvTanuloKozos/NyelvtanitoOldal/public_html/mondatkiegeszito.html</file>
             <file>file:/D:/Suli/Újabbak/Webprog/NyelvTanuloKozos/NyelvtanitoOldal/public_html/stilus2.css</file>
         </group>
+=======
+        <group/>
+>>>>>>> 4f4617f7d3b2ccfa393e4aa557a5424f893a8a35
     </open-files>
 </project-private>

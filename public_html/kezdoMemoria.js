@@ -89,8 +89,8 @@ function ujJatek() {
     probakSzama = 0;
     megtalaltParok = 0;
     $("#proba").text("Próbák száma: " + probakSzama);
-    kepekMegjelenitese();
     kever();
+    kepekMegjelenitese();
     for (var i = 0; i < kepek.length; i++) {
         $("section img ").eq(i).attr("src", kep17.eleresiUt);
     }
@@ -109,7 +109,7 @@ function kepekMegjelenitese() {
         kepElemTomb.eq(i).attr("src", kepek[i].eleresiUt);
         kepElemTomb.eq(i).attr("alt", kepek[i].alt);
     }
-
+    console.log(kepElemTomb);
 }
 
 

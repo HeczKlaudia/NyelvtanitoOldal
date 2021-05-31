@@ -8,13 +8,14 @@ main {
     display: grid;
     grid-template-areas:
         "h h h h"
-        "a a s s"
+        "a a s j"
         "f f f f";
     grid-gap: 10px;
     max-width: 1000px;
     margin: auto;
     padding: 10px;
     background-color: white;
+    height: 400px;
 }
 
 header {
@@ -25,17 +26,58 @@ header {
 article {
     grid-area: a;
     padding: 10px;
-    
+    border: 3px solid azure;
 }
 
 aside {
     grid-area:s;
     padding:10px;
+    border: 3px solid azure;
 }
-
-
 
 footer {
     grid-area: f;
-    padding: 10px;
+    padding:10px;
+    margin-top: 2.5em;
+    text-align: center;
+}
+
+.joValaszSzinezes {
+    color:lightgreen;
+}
+
+.rosszValaszSzinezes {
+    color:red;
+    pointer-events: none;
+    opacity:50%;
+    
+}
+
+.joValaszTobbi {
+    pointer-events: none;
+    opacity:50%;
+    
+}
+
+#valaszok1 {
+    margin: 10px;
+    font-size: 17px;
+}
+
+#valaszok2 {
+    margin: 10px;
+    font-size: 17px;
+}
+
+#valaszok3 {
+    margin: 10px;
+    font-size: 17px;
+}
+
+#jobb {
+    margin: 10px;
+}
+
+#kerdesek {
+    font-size: 20px;
 }

@@ -44,6 +44,14 @@ footer {
     size:20px;
 }
 
+.joValaszSzinezes {
+    color: lightgreen;
+}
+
+.rosszValaszSzinezes {
+    color: red;
+}
+
 #angol img {
     width:400px;
     border: 1px solid gray;
@@ -72,16 +80,16 @@ footer {
     margin-right: auto;
 }
 
-#egeszszotar{
-   
 
-}
+
+
 
 
 .arnyekoz{
 opacity:100%;
   transition:opacity 2s;
 }
+
 
 #felvetel label {
     padding:5px;
@@ -119,3 +127,4 @@ opacity:100%;
     width:200px;
     font-weight: bold;
 }
+
