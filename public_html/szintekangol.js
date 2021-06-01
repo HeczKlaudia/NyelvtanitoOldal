@@ -19,6 +19,7 @@ function link() {
         $("#halado img").wrap($("<a>").attr("href", "mondatkiegeszito.html"));
         $("#kozephalado img").wrap($("<a>").attr("href", "kozephalado.html"));
         $("#kezdo img").wrap($("<a>").attr("href", "kezdoMemoria.html"));
+        $("#szotarkep img").wrap($("<a>").attr("href", "szotar.html"));
        
 
     });
