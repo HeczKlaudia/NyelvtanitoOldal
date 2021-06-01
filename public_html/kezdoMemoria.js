@@ -65,7 +65,7 @@ var kep17 = {
     alt: "hatlap"
 };
 
-
+/*Globális változók*/
 var kepek = [kep1, kep2, kep3, kep4, kep5, kep6, kep7, kep8, kep9, kep10, kep11, kep12];
 var kulon = false;
 var elso = true;
@@ -73,6 +73,7 @@ var megtalaltParok = 0;
 var elozo;
 var alap;
 var probakSzama = 0;
+
 
 $(function () {
     $('#könnyit').click(function () {
@@ -97,7 +98,7 @@ function ujJatek() {
     $("section img ").click(ellenoriz);
 
 }
-function kepekMegjelenitese() {
+function kepekMegjelenitese() {//megjelníti a megkevert képeket 
     $("section div").empty();
     for (var i = 0; i < kepek.length; i++) {
         var elem = '<img id="' + i + '">';
@@ -114,7 +115,7 @@ function kepekMegjelenitese() {
 
 
 
-function kever() {
+function kever() {//megkeveri a megjelenitendő képeket
     console.log(kepek);
     var tombKepek = [];
     var tombSzoveg = [];
