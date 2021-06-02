@@ -17,6 +17,7 @@ var rendszervalasz;
 var szamok = [];
 var n = 0;
 var tesztVege = true;
+var eredmeny = 0;
 
 function kiir() {
     if (n < 10) {
@@ -35,7 +36,7 @@ function kiir() {
 
 
     } else {
-        $("#kerdes").text("Gratulálok! Sikeresen elvégezted a tesztet!");
+        $("#kerdes").text("Gratulálok! Sikeresen elvégezted a tesztet! Az eredményed: " + eredmeny/10 + "%");
         tesztVege = false;
     }
 }
@@ -46,11 +47,13 @@ function ellenoriz() {
         if ($("#valasz").val().toString().toLowerCase() === kerdesek[n].valasz) {
             helyesvalasz = true;
             rendszervalasz = "Helyes";
+            $("aside ul").append("<li>A(z) " + kerdesekszama + ". kérdésre a válasz: " + rendszervalasz + "</li>");
+            eredmeny++;
         } else {
             helyesvalasz = false;
             rendszervalasz = "Helytelen";
+            $("aside ul").append("<li>A(z) " + kerdesekszama + ". kérdésre a válasz: " + rendszervalasz + " | A helyes válasz: " + kerdesek[n].valasz +"</li>");
         }
-        $("aside ul").append("<li>A(z) " + kerdesekszama + ". kérdésre a válasz: " + rendszervalasz + "</li>");
         kerdesekszama++;
         n++;
         kiir();
@@ -88,6 +91,6 @@ var kerdesek = [{
     }, {
         kerdes: "When you ______ something, you get money in exchange for it.",
         valasz: "sell"
-    }]
+    }];
 
 
