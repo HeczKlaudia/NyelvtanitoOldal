@@ -82,6 +82,13 @@ footer {
 
 
 
+footer {
+    text-align:center;
+    margin:0;
+    padding:0;
+    border-top: 3px solid lightblue;
+    font-size: 10px;
+}
 
 
 

@@ -15,7 +15,6 @@ main {
     margin: auto;
     padding: 10px;
     background-color: white;
-    height: 500px;
 }
 
 header {
@@ -106,6 +105,15 @@ header a:hover{
 header{
     text-align: center;
 }
+
+footer {
+    text-align:center;
+    margin:0;
+    padding:0;
+    border-top: 3px solid lightblue;
+    font-size: 10px;
+}
+
 
 @media only screen and (max-width: 900px){
     img {
