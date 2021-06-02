@@ -27,11 +27,11 @@ header {
 article {
     grid-area: a;
     padding: 10px;
-    
+
 }
 
 #nyelvvalaszto {
-      display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -55,27 +55,27 @@ footer {
 #angol img {
     width:400px;
     border: 1px solid gray;
-     border-radius: 20px;
+    border-radius: 20px;
 }
 
 #nemet img {
     width:400px;
-   border: 1px solid gray;
-   border-radius: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
 }
 
 #szintek img {
-      width:400px;
-   border: 5px solid gray;
-   border-radius: 20px;
-   margin-bottom:10px;
-   display: block;
+    width:400px;
+    border: 5px solid gray;
+    border-radius: 20px;
+    margin-bottom:10px;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 #nyelvvalaszto img {
-     display: block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -86,8 +86,8 @@ footer {
 
 
 .arnyekoz{
-opacity:100%;
-  transition:opacity 2s;
+    opacity:100%;
+    transition:opacity 2s;
 }
 
 
@@ -150,29 +150,29 @@ opacity:100%;
 }
 
 @media only screen and (max-width: 600px) {
- #angol img {
-    width:100%;
+    #angol img {
+        width:100%;
 
-}
+    }
 
-#nemet img {
-    width:100%;
+    #nemet img {
+        width:100%;
 
-}
-#nyelvvalaszto {
-   
-    grid-template-columns: auto;
-    row-gap: 1em;
-}
-header {
-  background-image: url("kepek/kisebbfejlec.png");
-  height: 270px;
-}
-#szintek img {
-  width:100%;
-}
-#egeszszotar{
-    width:100%;
-}
+    }
+    #nyelvvalaszto {
+
+        grid-template-columns: auto;
+        row-gap: 1em;
+    }
+    header {
+        background-image: url("kepek/kisebbfejlec.png");
+        height: 270px;
+    }
+    #szintek img {
+        width:100%;
+    }
+    #egeszszotar{
+        width:100%;
+    }
 }
 
