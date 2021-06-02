@@ -16,7 +16,7 @@ function arnyek() {
 
 function link() {
   $(document).ready(function () {
-//        $("#halado img").wrap($("<a>").attr("href", "mondatkiegeszito.html"));
+        $("#halado img").wrap($("<a>").attr("href", "mondatkiegeszitoNemet.html"));
         $("#kozephalado img").wrap($("<a>").attr("href", "nemetKozephalado.html"));
         $("#kezdo img").wrap($("<a>").attr("href", "nemetMemoriaKezdo.html"));
 $("#szotarkep img").wrap($("<a>").attr("href", "szotar.html"));
