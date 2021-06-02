@@ -87,8 +87,11 @@ header a:hover{
 } 
 @media only screen and (max-width: 600px){
     img {
-        width: 80px;
+        width: 50px;
         padding: 5px;
 
+    }
+    header a{
+        font-size: 15px;
     }
 }
