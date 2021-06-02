@@ -30,22 +30,22 @@ var kep6 = {
 };
 
 var kep7 = {
-    eleresiUt: "kepekMemoria/7.png",
+    eleresiUt: "kepekMemoria/n1.png",
     alt: "alma",
     class: "szo"
 };
 var kep8 = {
-    eleresiUt: "kepekMemoria/25.png",
+    eleresiUt: "kepekMemoria/n5.png",
     alt: "fiú",
     class: "szo"
 };
 var kep9 = {
-    eleresiUt: "kepekMemoria/9.png",
+    eleresiUt: "kepekMemoria/n2.png",
     alt: "könyv",
     class: "szo"
 };
 var kep10 = {
-    eleresiUt: "kepekMemoria/10.png",
+    eleresiUt: "kepekMemoria/n3.png",
     alt: "ceruza",
     class: "szo"
 };
@@ -55,7 +55,7 @@ var kep11 = {
     class: "szo"
 };
 var kep12 = {
-    eleresiUt: "kepekMemoria/12.jpg",
+    eleresiUt: "kepekMemoria/n4.png",
     alt: "nap",
     class: "szo"
 };
@@ -116,30 +116,33 @@ function kepekMegjelenitese() {//megjelníti a megkevert képeket
 
 
 function kever() {//megkeveri a megjelenitendő képeket
+    console.log(kepek);
     var tombKepek = [];
     var tombSzoveg = [];
-    if (!kulon) {//hogy ha nem kell külön szedni 
-        kepek.sort(function () {//akkor keverje össze a kepek tömböt
+    if (!kulon) {
+        kepek.sort(function () {
             return 0.5 - Math.random();
         });
-    } else {//ha külön kell válogatni(könnyít)
-        /*Ketté szedjük a szóképeket és a képeket*/
+        console.log("if");
+    } else {
+        console.log("else");
         for (var i = 0; i < kepek.length; i++) {
-            if (kepek[i].class.includes("szo")) {//meg nézzük hogy a kép tömb tartalmazza a "szo"-t,ha igen
-                tombSzoveg.push(kepek[i]);//berakjuk a tombSzoveg tömbe
+            if (kepek[i].class.includes("szo")) {
+                tombSzoveg.push(kepek[i]);
             } else {
-                tombKepek.push(kepek[i]);//ha nem akkor a tomKepek tömbe tesszük 
+                tombKepek.push(kepek[i]);
             }
         }
-        /*képek és szöveg képek összekeverése*/
+
         tombKepek.sort(function () {
             return 0.5 - Math.random();
         });
         tombSzoveg.sort(function () {
             return 0.5 - Math.random();
         });
+        console.log(tombKepek);
+        console.log(tombSzoveg);
         var i = 0;
-        /*vissza töltjük a megjelenítendő szöveg képeket és képeket a kepek tömbe*/
         for (var j = 0; j < tombKepek.length; j++) {
             kepek[i] = tombKepek[j];
             i++;
@@ -148,19 +151,23 @@ function kever() {//megkeveri a megjelenitendő képeket
             kepek[i] = tombSzoveg[j];
             i++;
         }
+
     }
+
 }
 
 function ellenoriz() {
     fordit($(this).attr("id"));
-      /*Ha elso igaz vagyis az első kártya van felfordítva akkor előszőr megnézi hogy a képek és szöveg képek "alt"-ja ugyen az-e és ha igen akkor a megtalált párokat növeli
-     különben ha nem egyezik be állítunk egy időzítőt hogy foduljon vissza és ebben hívjuk (a setTimeoutban) a visszafordít fügvényt és  paramétereket átadjuk(eloz,alap)*/
+    console.log("ellenoriz");
     if (elso) {
+        console.log(elso);
         if ($("section img").eq(elozo).attr("alt") === $("section img").eq(alap).attr("alt")) {
+            console.log("ugyan az");
             $("section img").eq(elozo).css("border", "3px solid green");
             $("section img").eq(alap).css("border", "3px solid green");
             megtalaltParok++;
         } else {
+            console.log("nem ugyan az");
             $("section img").eq(alap).css("border", "3px solid red");
             $("section img").eq(elozo).css("border", "3px solid red");
             setTimeout(
@@ -172,6 +179,7 @@ function ellenoriz() {
         }
         probakSzama++;
         $("#proba").text("Próbák száma: " + probakSzama);
+        console.log(elozo, alap);
     }
     if (kepek.length / 2 <= megtalaltParok) {
         setTimeout(
@@ -183,7 +191,8 @@ function ellenoriz() {
 }
 function fordit(id) {
     $("section img").eq(id).attr("src", kepek[id].eleresiUt);
-    $("section img").eq(id).unbind("click");//leiratkozik a kattintós eseményt az adott id elemekről
+    console.log(kepek[id]);
+    $("section img").eq(id).unbind("click");
     if (elso) {
         elozo = id;
         elso = false;
@@ -195,12 +204,15 @@ function fordit(id) {
 
 }
 function visszafordit(id1, id2) {
+    console.log("fordul");
     setTimeout(
             function idozetes(id1, id2) {
                 $("section img").eq(id1).attr("src", kep17.eleresiUt);
                 $("section img").eq(id2).attr("src", kep17.eleresiUt);
-                $("section img").eq(id1).click(ellenoriz);//vissza állítja a kattintás érzékelőjét
+                $("section img").eq(id1).click(ellenoriz);
                 $("section img").eq(id2).click(ellenoriz);
             }, 800, id1, id2);
 
 }
+
+
