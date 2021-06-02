@@ -49,13 +49,13 @@ footer {
     color:red;
     pointer-events: none;
     opacity:50%;
-    
+
 }
 
 .joValaszTobbi {
     pointer-events: none;
     opacity:50%;
-    
+
 }
 
 #valaszok1 {
@@ -116,16 +116,42 @@ footer {
 
 
 @media only screen and (max-width: 900px){
-    img {
-        width: 100px;
-        padding: 5px;
-
+    main {
+        height: 900px;
+        display: grid;
+        grid-template-areas:
+            "h"
+            "a"
+            "s"
+            "j"
+            "f";
     }
-} 
-@media only screen and (max-width: 600px){
-    img {
-        width: 80px;
-        padding: 5px;
+}
 
+@media only screen and (max-width: 800px){
+    main {
+        height: 900px;
+        display: grid;
+        grid-template-areas:
+            "h"
+            "a"
+            "s"
+            "j"
+            "f";
+    }
+}
+
+@media only screen and (max-width: 400px){
+    main {
+        max-width: 100%;
+        margin: auto;
+        height: 700px;
+        display: grid;
+        grid-template-areas:
+            "h"
+            "a"
+            "s"
+            "j"
+            "f";
     }
 }
